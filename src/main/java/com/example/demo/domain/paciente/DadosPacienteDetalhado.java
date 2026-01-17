@@ -1,7 +1,6 @@
-package com.example.demo.paciente;
+package com.example.demo.domain.paciente;
 
-import com.example.demo.endereco.Endereco;
-import com.example.demo.medico.DadosMedicoDetalhado;
+import com.example.demo.domain.endereco.Endereco;
 
 public record DadosPacienteDetalhado(
         Long id,
