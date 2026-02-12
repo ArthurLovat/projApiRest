@@ -9,5 +9,4 @@ public record DadosEditarMedico(
         String nome,
         String telefone,
         DadosEndereco endereco
-) {
-}
+) { }
