@@ -49,25 +49,16 @@ public class SecurityConfigurations {
 
 }
 
-//
-// http.csrf(csrf -> csrf.disable())
-//        .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-//        .authorizeHttpRequests(req -> {
-//        req.requestMatchers("/login").permitAll();
-//                            req.anyRequest().authenticated();
-//                        })
-//                                .build();
-
-//// No seu SecurityConfigurations.java
 //@Bean
 //public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//    return http.csrf(csrf -> csrf.disable())
-//            .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-//            .authorizeHttpRequests(req -> {
-//                req.requestMatchers(HttpMethod.POST, "/login").permitAll();
-//                //req.requestMatchers(HttpMethod.POST, "/usuarios").permitAll(); // ADICIONE ESTA LINHA
-//                req.anyRequest().authenticated();
-//            })
-//            .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
+//    return http.csrf().disable()
+//            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//            .and().authorizeHttpRequests()
+//            .requestMatchers(HttpMethod.POST, "/login").permitAll()
+//            .requestMatchers(HttpMethod.DELETE, "/medicos").hasRole("ADMIN")
+//            .requestMatchers(HttpMethod.DELETE, "/pacientes").hasRole("ADMIN")
+//            .anyRequest().authenticated()
+//            .and().addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
 //            .build();
 //}
+
